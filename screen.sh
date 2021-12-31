@@ -38,18 +38,16 @@ function back(){
     esac
 }
 
-function update(){
-    wget -N https://cdn.jsdelivr.net/gh/Misaka-blog/screenManager@master/screen.sh && chmod -R 777 screen.sh && bash screen.sh
-}
-
 function menu(){
     clear
-    red "============================"
+    red "=================================="
     echo "                           "
-    red "   Screen 后台运行管理脚本   "
-    red "       by 小御坂的破站       "
+    red "       Screen 后台运行管理脚本       "
+    red "          by 小御坂的破站           "
     echo "                           "
-    red "============================"
+    red "  Site: https://blog.misaka.rest  "
+    echo "                           "
+    red "=================================="
     echo "1. 创建screen后台名称"
     echo "2. 查看并进入指定screen后台"
     echo "3. 查看并删除指定screen后台"
