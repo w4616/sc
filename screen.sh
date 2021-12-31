@@ -38,6 +38,10 @@ function back(){
     esac
 }
 
+function update(){
+    wget -N https://cdn.jsdelivr.net/gh/Misaka-blog/screenManager@master/screen.sh && chmod -R 777 screen.sh && bash screen.sh
+}
+
 function menu(){
     clear
     red "============================"
