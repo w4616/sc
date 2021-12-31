@@ -1,2 +1,3 @@
-# screenManager
-Screen 后台运行管理脚本
+# Screen 后台运行管理脚本
+
+此脚本能够更好的帮助你管理screen后台下的任务，做到管理简单化
