@@ -45,7 +45,7 @@ function menu(){
     red "       Screen 后台运行管理脚本       "
     red "          by 小御坂的破站           "
     echo "                           "
-    red "  Site: https://blog.misaka.rest  "
+    red "  Site: https://owo.misaka.rest  "
     echo "                           "
     red "=================================="
     echo "1. 创建screen后台名称"
