@@ -48,7 +48,7 @@ function menu(){
     red "  Site: https://owo.misaka.rest  "
     echo "                           "
     red "=================================="
-    echo "1. 创建screen后台名称"
+    echo "1. 创建screen并设置后台名称"
     echo "2. 查看并进入指定screen后台"
     echo "3. 查看并删除指定screen后台"
     echo "4. 清除所有screen后台"
