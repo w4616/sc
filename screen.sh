@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 green(){
     echo -e "\033[32m$1\033[0m";
@@ -18,10 +18,6 @@ white(){
 
 blue(){
     echo -e "\033[36m$1\033[0m";
-}
-
-readp(){
-    read -p "$(white "$1")" $2;
 }
 
 [[ $(type -P yum) ]] && yumapt='yum -y' || yumapt='apt -y'
