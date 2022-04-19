@@ -1,11 +1,11 @@
 # Screen 后台运行管理脚本
 
-此脚本能够更好的帮助你管理screen后台下的任务
+此脚本能够更好的帮助你管理screen后台下的任务情况
 
 ## 使用方法
 
 ```shell
-wget -N https://raw.githubusercontents.com/Misaka-blog/screenManager/master/screen.sh && bash screen.sh
+wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/screenManager/master/screen.sh && bash screen.sh
 ```
 
 快捷方式 `bash screen.sh`
