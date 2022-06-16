@@ -101,7 +101,7 @@ menu(){
     echo " -------------"
     echo -e " ${GREEN}0.${PLAIN} 退出脚本"
     echo ""
-    yellow "脚本的一些小提示："
+    yellow "使用脚本的一些小提示："
     yellow "1. 退出Screen后台会话时，请按Ctrl+A+D快捷键退出"
     yellow "2. 请谨慎使用4选项"
     echo ""
@@ -115,4 +115,8 @@ menu(){
     esac
 }
 
-menu
+if [ $# > 0 ]; then
+    menu
+else
+    menu
+fi
