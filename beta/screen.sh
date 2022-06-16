@@ -45,7 +45,7 @@ back2menu() {
 
 createScreen(){
     read -p "设置screen后台名称：" screenName
-    screen -S $screenName
+    screen -U -S $screenName
     back2menu
 }
 
