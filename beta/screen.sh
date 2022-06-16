@@ -50,24 +50,24 @@ back2menu() {
 }
 
 createScreen(){
-    read -rp "设置screen后台名称：" screenName
+    read -rp "设置screen后台会话名称：" screenName
     screen -U -S $screenName
     back2menu
 }
 
 enterScreen(){
     screenNames=`screen -ls | grep '(Detached)' | awk '{print $1}' | awk -F "." '{print $2}'`
-    [[ -n $screenNames ]] && yellow "当前运行的Screen会话如下所示：" && green "$screenNames"
-    read -rp "输入进入的screen后台名称：" screenName
-    screen -r $screenName || red "没有找到 $screenName 的会话"
+    [[ -n $screenNames ]] && yellow "当前运行的Screen后台会话如下所示：" && green "$screenNames"
+    read -rp "输入进入的screen后台会话名称：" screenName
+    screen -r $screenName || red "没有找到 $screenName 会话"
     back2menu
 }
 
 deleteScreen(){
     screenNames=`screen -ls | grep '(Detached)' | awk '{print $1}' | awk -F "." '{print $2}'`
     [[ -n $screenNames ]] && green "$screenNames"
-    read -rp "输入删除的screen后台名称：" screenName
-    screen -S $screenName -X quit || red "没有找到 $screenName 的会话"
+    read -rp "输入删除的screen后台会话名称：" screenName
+    screen -S $screenName -X quit || red "没有找到 $screenName 会话"
     back2menu
 }
 
@@ -92,14 +92,18 @@ menu(){
     echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/misaka-blog                    #"
     echo "#############################################################"
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 创建screen后台并设置名称"
+    echo -e " ${GREEN}1.${PLAIN} 创建screen后台会话并设置会话名称"
     echo " -------------"
-    echo -e " ${GREEN}2.${PLAIN} 查看并进入指定screen后台"
-    echo -e " ${GREEN}3.${PLAIN} 查看并删除指定screen后台"
+    echo -e " ${GREEN}2.${PLAIN} 查看并进入指定screen后台会话"
+    echo -e " ${GREEN}3.${PLAIN} 查看并删除指定screen后台会话"
     echo " -------------"
     echo -e " ${GREEN}4.${PLAIN} 清除所有screen后台"
     echo " -------------"
     echo -e " ${GREEN}0.${PLAIN} 退出脚本"
+    echo ""
+    yellow "脚本的一些小提示："
+    yellow "1. 退出Screen后台会话时，请按Ctrl+A+D快捷键退出"
+    yellow "2. 请谨慎使用4选项"
     echo ""
     read -rp "请输入选项 [0-4]:" menuNumberInput
     case "$menuNumberInput" in 
