@@ -82,7 +82,7 @@ killAllScreen(){
 menu(){
     clear
     echo "#############################################################"
-    echo -e "#                    ${RED} WARP  一键安装脚本${PLAIN}                    #"
+    echo -e "#                   ${RED} Screen  后台管理脚本${PLAIN}                   #"
     echo -e "# ${GREEN}作者${PLAIN}: Misaka No                                           #"
     echo -e "# ${GREEN}博客${PLAIN}: https://owo.misaka.rest                             #"
     echo -e "# ${GREEN}论坛${PLAIN}: https://vpsgo.co                                    #"
@@ -106,7 +106,7 @@ menu(){
         2 ) enterScreen ;;
         3 ) deleteScreen ;;
         4 ) killAllScreen ;;
-        0 ) exit 1 ;;
+        * ) exit 1 ;;
     esac
 }
 
