@@ -100,6 +100,7 @@ menu(){
     echo -e " ${GREEN}4.${PLAIN} 清除所有screen后台"
     echo " -------------"
     echo -e " ${GREEN}0.${PLAIN} 退出脚本"
+    echo ""
     read -rp "请输入选项 [0-4]:" menuNumberInput
     case "$menuNumberInput" in 
         1 ) createScreen ;;
