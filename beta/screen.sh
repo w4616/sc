@@ -56,6 +56,10 @@ back2menu() {
 
 createScreen(){
     read -rp "设置screen后台会话名称：" screenName
+	if [[ -z $screenName ]]; then
+	    red "未设置screen后台会话名称，退出操作"
+		back2menu
+	fi
     screen -U -S $screenName
     back2menu
 }
