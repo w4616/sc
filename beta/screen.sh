@@ -70,7 +70,7 @@ enterScreen(){
 
 deleteScreen(){
     screenNames=`screen -ls | grep '(Detached)' | awk '{print $1}' | awk -F "." '{print $2}'`
-    [[ -n $screenNames ]] && green "$screenNames"
+    [[ -n $screenNames ]] && yellow "当前运行的Screen后台会话如下所示：" && green "$screenNames"
     read -rp "输入删除的screen后台会话名称：" screenName
     screen -S $screenName -X quit || red "没有找到 $screenName 会话"
     back2menu
@@ -102,7 +102,7 @@ menu(){
     echo -e " ${GREEN}2.${PLAIN} 查看并进入指定screen后台会话"
     echo -e " ${GREEN}3.${PLAIN} 查看并删除指定screen后台会话"
     echo " -------------"
-    echo -e " ${GREEN}4.${PLAIN} 清除所有screen后台"
+    echo -e " ${GREEN}4.${PLAIN} 清除所有screen后台会话"
     echo " -------------"
     echo -e " ${GREEN}0.${PLAIN} 退出脚本"
     echo ""
