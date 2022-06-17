@@ -56,17 +56,20 @@ back2menu() {
 
 createScreen(){
     read -rp "设置screen后台会话名称：" screenName
-	if [[ -z $screenName ]]; then
-	    red "未设置screen后台会话名称，退出操作"
-		back2menu
-	fi
+    if [[ -z $screenName ]]; then
+        red "未设置screen后台会话名称，退出操作"
+        back2menu
+    fi
     screen -U -S $screenName
     back2menu
 }
 
 enterScreen(){
     screenNames=`screen -ls | grep '(Detached)' | awk '{print $1}' | awk -F "." '{print $2}'`
-    [[ -n $screenNames ]] && yellow "当前运行的Screen后台会话如下所示：" && green "$screenNames"
+    if [[ -n $screenNames ]]; then
+        yellow "当前运行的Screen后台会话如下所示："
+        green $screenNames
+    fi
     read -rp "输入进入的screen后台会话名称：" screenName
     screen -r $screenName || red "没有找到 $screenName 会话"
     back2menu
@@ -74,7 +77,10 @@ enterScreen(){
 
 deleteScreen(){
     screenNames=`screen -ls | grep '(Detached)' | awk '{print $1}' | awk -F "." '{print $2}'`
-    [[ -n $screenNames ]] && yellow "当前运行的Screen后台会话如下所示：" && green "$screenNames"
+    if [[ -n $screenNames ]]; then
+        yellow "当前运行的Screen后台会话如下所示："
+        green $screenNames
+    fi
     read -rp "输入删除的screen后台会话名称：" screenName
     screen -S $screenName -X quit || red "没有找到 $screenName 会话"
     back2menu
