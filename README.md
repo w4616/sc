@@ -7,7 +7,7 @@
 ## 使用方法
 
 ```shell
-wget -N --no-check-certificate https://raw.githubusercontent.com/w4616/sc/master/sc.sh && bash sc.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/w4616/sc/master/s.sh && bash sc.sh
 ```
 
 快捷方式 `bash screen.sh`
