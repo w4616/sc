@@ -71,7 +71,7 @@ enterScreen(){
         green "$screenNames"
     fi
     read -rp "输入进入的screen后台会话名称：" screenName
-    screen -r $screenName || red "没有找到 $screenName 会话"
+    screen -U -r $screenName || red "没有找到 $screenName 会话"
     back2menu
 }
 
